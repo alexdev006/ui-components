@@ -36,7 +36,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <div className="w-4/5 mx-auto my-2">{children}</div>
         </ThemeProvider>
       </body>
     </html>
