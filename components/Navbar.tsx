@@ -18,9 +18,6 @@ export default function Navbar() {
   return (
     <div className="border border-b-2 p-2 flex items-center justify-between">
       <div className="block sm:hidden">
-        {/* <Button variant="outline" size="icon">
-          <Menu />
-        </Button> */}
         <NavbarDrawer navLinks={navLinks} />
       </div>
       <div className="">Logo</div>

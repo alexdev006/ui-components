@@ -2,20 +2,18 @@
 
 import * as React from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Navlink } from "@/shared/interface";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 interface NavbarDrawerProps {
   navLinks: Navlink[];
@@ -23,6 +21,7 @@ interface NavbarDrawerProps {
 
 export function NavbarDrawer({ navLinks }: NavbarDrawerProps) {
   const pathname = usePathname();
+
   return (
     <Drawer direction="left">
       <DrawerTrigger asChild>
