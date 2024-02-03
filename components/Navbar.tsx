@@ -1,13 +1,11 @@
 "use client";
-import Link from "next/link";
 
-import { ToggleDarkModeButton } from "./ToggleDarkModeButton";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-interface Navlink {
-  label: string;
-  href: string;
-}
+import { ToggleDarkModeButton } from "./ToggleDarkModeButton";
+import { NavbarDrawer } from "./NavbarDrawer";
+import { Navlink } from "@/shared/interface";
 
 const navLinks: Navlink[] = [
   { label: "Home", href: "/" },
@@ -19,8 +17,14 @@ export default function Navbar() {
   const pathname = usePathname();
   return (
     <div className="border border-b-2 p-2 flex items-center justify-between">
+      <div className="block sm:hidden">
+        {/* <Button variant="outline" size="icon">
+          <Menu />
+        </Button> */}
+        <NavbarDrawer navLinks={navLinks} />
+      </div>
       <div className="">Logo</div>
-      <div className="">
+      <div className="hidden sm:block">
         <nav>
           {navLinks.map(({ label, href }: Navlink) => (
             <Link
@@ -28,7 +32,7 @@ export default function Navbar() {
               key={label}
               className={`mx-2 ${
                 pathname === href
-                  ? "font-semibold underline underline-offset-8 decoration-indigo-500 decoration-4"
+                  ? "font-bold underline underline-offset-8 decoration-indigo-500 decoration-4"
                   : ""
               }`}
             >
