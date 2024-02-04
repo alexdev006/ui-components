@@ -1,3 +1,5 @@
+import AnimatedList from "@/components/AnimatedList/AnimatedList";
+
 export default function WorkPage() {
-  return <p>work page</p>;
+  return <AnimatedList />;
 }
